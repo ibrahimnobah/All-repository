@@ -94,6 +94,7 @@ class CardEngine {
   }
 
   draw(newCard) {
+    
     var card = document.createElement("div");
     var value = document.createElement("div");
     var suit = document.createElement("div");
