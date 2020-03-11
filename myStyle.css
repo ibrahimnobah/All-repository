@@ -12,13 +12,15 @@
 .card {
   padding: 10px;
   border: solid 1px #808080;
-  background-color: green;
+  background-color: white;
   display: inline-block;
   border-radius: 10px;
   font-size: 14pt;
   text-align: center;
   color: black;
   margin: 3px;
+  
+
 }
 
 .btn {
@@ -32,26 +34,29 @@
 .card .value {
   font-size: 15pt;
   font-family: sans-serif;
+
 }
 
 .card .suit {
    height: 100px;
   width: 90px;
+
 }
 
 .card .diamonds {
   background-position-y: 100px;
+
 }
 
 .card .hearts {
   background-position-x: 90px;
+
 }
 
 .card .clubs {
   background-position-x: 90px;
   background-position-y: 100px;
-  background-image: url("images/card.png");
-  background-color: wheat;
+
 
 }
 
