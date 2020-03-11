@@ -1,20 +1,6 @@
 class CardEngine {
   constructor() {
-    this.cards = [
-      "A",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10",
-      "J",
-      "Q",
-      "K"
-    ];
+    this.cards = [ "A", "2", "3", "4", "5", "6", "7","8","9", "10", "J","Q","K"];
     this.suits = ["diamonds", "hearts", "spades", "clubs"];
     this.deck = [];
     this.ground = [];
