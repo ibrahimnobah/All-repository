@@ -112,12 +112,7 @@ class CardEngine {
     }
     document.getElementById("ground").appendChild(card);
   }
-
-  playPlayer1() {}
-
-  playPlayer2() {}
-
-  doPlay(newCard) {
+ doPlay(newCard) {
     this.draw(newCard);
     if (this.ground.length == 0) {
       this.ground.push(newCard);
