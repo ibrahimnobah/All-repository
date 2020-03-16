@@ -8,7 +8,6 @@ class CardEngine {
     this.player2 = new Player();
     this.isFirstPlayerTurn = true;
   }
-
   reset() {
     this.deck = [];
     this.ground = [];
@@ -19,7 +18,6 @@ class CardEngine {
     this.shuffle();
     this.deal();
   }
-
   buildDeck() {
    
     for (var i = 0; i < this.suits.length; i++) {
@@ -28,8 +26,7 @@ class CardEngine {
       }
     }
   }
-
-  shuffle() {
+   shuffle() {
     for (var i = 0; i < this.deck.length; i++) {
       var location1 = Math.floor(Math.random() * this.deck.length);
       var location2 = Math.floor(Math.random() * this.deck.length);
@@ -102,8 +99,6 @@ class Card {
     this.value = value;
   }
 }
-
-
 $(document).ready(function(){
   function cardGame(){
     var game=new CardEngine();
