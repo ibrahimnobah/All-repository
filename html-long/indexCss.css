@@ -20,6 +20,9 @@
   color: #818181;
   display: block;
 }
+.l1 {
+  margin: 20px;
+}
 
 /* Style links on mouse-over */
 .sidebar a:hover {
@@ -29,6 +32,15 @@
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+}
+.patient-edit-screen {
+  border-style: solid;
+  border-color: #92a8d1;
+  padding: 20px;
+  margin: 20px;
+  background-color: rgb(145, 178, 248);
+  color: #111;
+  float: inline-start;
 }
 
 .sidenav {

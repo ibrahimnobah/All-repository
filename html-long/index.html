@@ -107,9 +107,75 @@
 
       <div class="user-edit-screen"><h1>user edit</h1></div>
 
-      <div class="patient-edit-screen"><h1>patient-edit</h1></div>
+      <div class="patient-edit-screen l1">
+        <h1>Patient (New) : </h1>
+        <div class="container">
+          <div class="row">
+            <div class="col l1">
+              <form id="nameform">
+              <div class="row-2">
+                <label class="col-md-auto l1">first Name</label>
+                <input class="col-md-auto  " type="text" required>
+              </div>
+              <div class="row-2">
+                <label class="col-md-auto l1">middel Name</label>
+              <input class="col-md-auto  " type="text">
+              </div>
+              <div class="row-2">
+                <label class="col-md-auto l1" >last Name</label>
+              <input class="col-md-auto " type="text" required>
+              </div> 
+             
+              <div class="row-2">
+                <label class="col-md-auto l1">Status</label>
+                <select id="Status" class="col-md-auto" required>
+                 <option value="0">Draft</option>
+                  <option value="1">Saved</option>
+                  <option value="2">Deleted</option>
+                 </select>
+              </div>
+              <div class="row-2 ">
+                <label class="col-md-auto l1" > Active</label>
+                <input class="col-md-auto " type="checkbox" required>
+              </div>
+              <div class="row-2">
+                <button type="submit"  form="nameform" class="left btn btn-primary l1 " value="Submit">save</button> 
+                <button type="submit"  form="nameform"  class="left btn btn-danger l1 " value="Submit">cancel</button> 
+          
+              </div>
+            </div>
+            <div class="col l1">  
+              <div class="row-2">
+                <label class="col-md-auto l1 ">email</label>
+                <input class="col-md-auto " type="email" required >
+              </div>
+              <div class="row-2">
+                <label class="col-md-auto l1">Date of Birth</label>
+                <input class="col-md-auto " type="date" required>
+              </div>
+              <div class="row-2">
+                <label class="col-md-auto l1">last Check</label>
+                <input class="col-md-auto " type="date">
+              </div>  
+              <div class="row-4">
+                <label class="col-md-auto l1">gender</label>
+                <form  class="col-md-auto " required>
+                  <input type="radio" class="col-md-auto" name="gender" value="1">
+                  Male
+                  
+                  <input type="radio" class="col-md-auto" name="gender" value="2"> 
+                  Female
+                </form>
+                
+              </div>
+            </form>
+           
+      </div>
+    
     </div>
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="Task1_patientData.js"></script>
 
   <script src="index-script.js"></script>
 </html>
