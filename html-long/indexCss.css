@@ -40,8 +40,32 @@
   border-style: solid;
   border-color: #92a8d1;
   padding: 20px;
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
   background-color: rgb(145, 178, 248);
+  color: #111;
+  float: inline-start;
+}
+.user-list-screen {
+  border-style: solid;
+  border-color: #0e5ae9;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  background-color: rgb(209, 75, 13);
+  color: #111;
+  float: inline-start;
+}
+.user-edit-screen {
+  border-style: solid;
+  border-color: #f83a00;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  background-color: rgb(13, 26, 209);
   color: #111;
   float: inline-start;
 }

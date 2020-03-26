@@ -13,21 +13,21 @@
   <body>
     <div class="sliderbar col-3">
       <div class="sidenav">
-        <a href="script:void(0)">users</a>
-        <a href="script:void(0)">patients</a>
+        <a href="#user-list-screen" >users</a>
+        <a href="#patient-list-screen" >patients</a>
         <a href="script:void(0)">log out</a>
       </div>
     </div>
     <div class="container-fluid col-9">
-      <div class="patient-list-screen row">
+      <div class="patient-list-screen row" id="#patient-list-screen" >
         <div class="col-sm-7">
-          <h1>patient list</h1>
+          <h1>patient-list-screen</h1>
         </div>
-        <div class="row-10">
-          <button type="button" class="add btn btn-warning ">Add</button>
-        </div>
+        
+          <button type="button" class="add btn btn-warning " > <a href="#patient-edit-screen">Add</a> </button>
+    
 
-        <table class="table table-hover .sr-only .table-sm col-8">
+        <table class="table table-hover .sr-only .table-sm col-10">
           <tr>
             <th>id</th>
             <th>name</th>
@@ -103,13 +103,13 @@
           </tr>
         </table>
       </div>
-      <div class="user-list-screen"><h1>user list</h1></div>
+      <div id="#user-list-screen"  class="user-list-screen"><h1>user-list-screen</h1></div>
 
-      <div class="user-edit-screen"><h1>user edit</h1></div>
+      <div  id="#user-edit-screen" class="user-edit-screen"><h1>user-edit-screen</h1></div>
 
-      <div class="patient-edit-screen l1">
+      <div id="#patient-edit-screen" class="patient-edit-screen">
         <h1 l1>Patient (New) : </h1>
-        <div class="container">
+        <div>
           <div class="row">
             <div class="col l1">
               <form id="nameform">
@@ -171,7 +171,7 @@
     
     </div>
   </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
   <script src="Task1_patientData.js"></script>
 
   <script src="index-script.js"></script>
