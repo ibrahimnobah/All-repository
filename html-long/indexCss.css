@@ -167,115 +167,6 @@ html {
   box-sizing: inherit;
 }
 
-/* ==========================================================================
-   #RESET
-   ========================================================================== */
-/**
- * A very simple reset that sits on top of Normalize.css.
- */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-blockquote,
-p,
-pre,
-dl,
-dd,
-ol,
-ul,
-figure,
-hr,
-fieldset,
-legend {
-  margin: 0;
-  padding: 0;
-}
-
-/**
- * Remove trailing margins from nested lists.
- */
-li > ol,
-li > ul {
-  margin-bottom: 0;
-}
-
-/**
- * Remove default table spacing.
- */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/**
- * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
- *    on fieldsets.
- */
-fieldset {
-  min-width: 0;
-  /* [1] */
-  border: 0;
-}
-
-button {
-  outline: none;
-  background: none;
-  border: none;
-}
-
-/* ==========================================================================
-   #PAGE WRAPPER
-   ========================================================================== */
-.page-wrapper {
-  min-height: 100vh;
-}
-
-body {
-  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 400;
-}
-
-h1 {
-  font-size: 36px;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-h3 {
-  font-size: 24px;
-}
-
-h4 {
-  font-size: 18px;
-}
-
-h5 {
-  font-size: 15px;
-}
-
-h6 {
-  font-size: 13px;
-}
-
-/* ==========================================================================
-   #BACKGROUND
-   ========================================================================== */
 .bg-blue {
   background: #eeeff1;
 }
@@ -619,23 +510,6 @@ input {
   position: relative;
 }
 
-.input-icon {
-  position: absolute;
-  font-size: 18px;
-  color: #999;
-  right: 18px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-
-/* ==========================================================================
-   #SELECT2
-   ========================================================================== */
 .select--no-search .select2-search {
   display: none !important;
 }
@@ -745,9 +619,6 @@ input {
   padding-left: 22px;
 }
 
-/* ==========================================================================
-   #TITLE
-   ========================================================================== */
 .title {
   font-size: 24px;
   color: #525252;
@@ -755,9 +626,6 @@ input {
   margin-bottom: 40px;
 }
 
-/* ==========================================================================
-   #CARD
-   ========================================================================== */
 .card {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
