@@ -12,17 +12,18 @@
 <body>
   <div class="sliderbar col-3">
     <div class="sidenav">
-      <a id="users-add-naviation" class="toggle-naviation btn .btn-link">users</a>
-      <a id="patient-navigation" class="toggle-naviation btn .btn-link">patients</a>
+      <a id="users-add-naviation" divToShow="user-list-screen" class="toggle-naviation btn .btn-link">users</a>
+      <a id="patient-navigation" divToShow="patient-list-screen" class="toggle-naviation btn .btn-link">patients</a>
       <a href="script:void(0)">log out</a>
     </div>
   </div>
   <div class="container-fluid col-9">
-    <div class="patient-list-screen row" id="patient-list-screen">
+
+    <div class="patient-list-screen row" active="true">
       <div class="col-sm-7">
         <h1>patient-list-screen </h1>
       </div>
-      <a href="#patient-edit-screen" class="toggle-naviation btn btn-warning" id="patient-edit-naviation">Add</a>
+      <a href="#patient-edit-screen" class="toggle-naviation btn btn-warning" divToShow="patient-edit-screen">Add</a>
       <table class="table table-hover .sr-only .table-sm col-10">
         <tr>
           <th>id</th>
@@ -91,16 +92,21 @@
 
       </table>
     </div>
-    <div id="user-list-screen" class="user-list-screen hidden ">
+
+    <div class="user-list-screen" active="false">
       <h1>
         user-list-screen
       </h1>
+      <a href="#user-edit-screen" class="toggle-naviation btn btn-warning" divToShow="user-edit-screen">Add</a>
+
+
     </div>
 
-    <div id="user-edit-screen" class="user-edit-screen hidden ">
+    <div class="screen user-edit-screen" active="false">
       <h1>user-edit-screen</h1>
     </div>
-    <div id="patient-edit-screen" class="patient-edit-screen hidden ">
+
+    <div class="screen patient-edit-screen" active="false">
       <h1 l1>Patient (New) : </h1>
       <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
@@ -112,13 +118,13 @@
                   <div class="col-6">
                     <div class="input-group">
                       <label class="label">first name</label>
-                      <input class="input--style-4" type="text" name="fname">
+                      <input class="input--style-4" type="text" name="fname" required>
                     </div>
                   </div>
                   <div class="col-6">
                     <div class="input-group">
                       <label class="label">email</label>
-                      <input class="input--style-4" type="email" name="email">
+                      <input class="input--style-4" type="email" name="email" required>
                     </div>
                   </div>
                 </div>
@@ -127,7 +133,7 @@
                     <div class="input-group">
                       <label class="label">middalName</label>
                       <div class="input-group">
-                        <input class="input--style-4 " type="text" name="mName">
+                        <input class="input--style-4 " type="text" name="mName" required>
 
                       </div>
                     </div>
@@ -136,7 +142,7 @@
                     <div class="input-group">
                       <label class="label">lastCheck</label>
                       <div class="input-group">
-                        <input class="input--style-4 " type="date" name="lastCheck">
+                        <input class="input--style-4 " type="date" name="lastCheck" required>
 
                       </div>
                     </div>
@@ -145,7 +151,7 @@
                     <div class="input-group">
                       <label class="label">last name</label>
                       <div class="input-group">
-                        <input class="input--style-4 " type="text" name="lname">
+                        <input class="input--style-4 " type="text" name="lname" required>
 
                       </div>
                     </div>
@@ -155,11 +161,11 @@
                       <label class="label">Gender</label>
                       <div class="p-t-10">
                         <label class="radio-container m-r-45">Male
-                          <input type="radio" checked="checked" name="gender">
+                          <input type="radio" checked="checked" name="gender" required>
                           <span class="checkmark"></span>
                         </label>
                         <label class="radio-container">Female
-                          <input type="radio" name="gender">
+                          <input type="radio" name="gender" required>
                           <span class="checkmark"></span>
                         </label>
                       </div>
@@ -172,7 +178,7 @@
                       <label class="label">status</label>
                       <div class="input--style-4 js-datepicker">
                         <select name="subject">
-                          <option value="0">Draft</option>
+                          <option value="0" required>Draft</option>
                           <option value="1">Saved</option>
                           <option value="2">Deleted</option>
                         </select>
@@ -184,26 +190,26 @@
                   <div class="col-6">
                     <div class="input-group">
                       <label class="label">Day of brith</label>
-                      <input class="input--style-4 " type="date" name="DOB">
+                      <input class="input--style-4 " type="date" name="DOB" required>
                     </div>
                   </div>
                 </div>
                 <div class="input-group">
 
                   <label class="label">Active</label>
-                  <input type="checkbox" name="Active">
+                  <input type="checkbox" name="Active" required>
                 </div>
                 <div class="p-t-15">
                   <button class="btn btn--radius-2 btn--blue" type="submit">Save</button>
-                  <button class="btn btn--radius-2 btn--blue" type="submit">cansel</button>
-
-                </div>
               </form>
+              <button class="toggle-naviation btn btn--radius-2 btn--blue" id="patient-edit-naviation">cansel</button>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+  </div>
 </body>
 <script src="jquery/jquery-3.4.1.min.js"></script>
 <script src="Task1_patientData.js"></script>
