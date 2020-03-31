@@ -1,11 +1,24 @@
 $(document).ready(function() {
-  $('[active="false"]').hide();
   $(".toggle-naviation ").click(function() {
-    $('[active="true"]').attr("active", "false");
-    var divToShow = $(this).attr("divToShow");
-    $("." + divToShow).attr("active", "true");
-    $('[active="true"]').show();
-    $('[active="false"]').hide();
+    $(".patient-list-screen").hide();
+    $(".user-list-screen").hide();
+    $(".patient-edit-screen").hide();
+    $(".user-edit-screen").hide();
+    debugger;
+    switch ($(this).data("naviation")) {
+      case "patient-list-screen":
+        $(".patient-list-screen").show();
+        break;
+      case "patient-edit-screen":
+        $(".patient-edit-screen").show();
+        break;
+      case "user-edit-screen":
+        $(".user-edit-screen").show();
+        break;
+      case "user-list-screen":
+        $(".user-list-screen").show();
+        break;
+    }
   });
 });
 class Patient {
