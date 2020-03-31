@@ -114,7 +114,5 @@ class listpatient {
     table.html(output);
   }
 }
-
-debugger;
 var x = new listpatient();
 x.intiData();
