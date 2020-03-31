@@ -10,206 +10,182 @@
 </head>
 
 <body>
-  <div class="sliderbar col-3">
-    <div class="sidenav">
-      <a id="users-add-naviation" divToShow="user-list-screen" class="toggle-naviation btn .btn-link">users</a>
-      <a id="patient-navigation" divToShow="patient-list-screen" class="toggle-naviation btn .btn-link">patients</a>
-      <a href="script:void(0)">log out</a>
-    </div>
-  </div>
-  <div class="container-fluid col-9">
+  <div class="row">
 
-    <div class="patient-list-screen row" active="true">
-      <div class="col-sm-7">
-        <h1>patient-list-screen </h1>
+    <div class="sliderbar col-2">
+      <div class="sidenav">
+        <a id="users-add-naviation" divToShow="user-list-screen" class="toggle-naviation btn .btn-link">users</a>
+        <a id="patient-navigation" divToShow="patient-list-screen" class="toggle-naviation btn .btn-link">patients</a>
+        <a href="script:void(0)">log out</a>
       </div>
-      <a href="#patient-edit-screen" class="toggle-naviation btn btn-warning" divToShow="patient-edit-screen">Add</a>
-      <table class="table table-striped table-hover .table-sm col-10">
-        <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>email</th>
-          <th>gender</th>
-          <th>DOB</th>
-          <th>Active</th>
-          <th>Creation</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Maria Anders</td>
-          <td>i@tste.com</td>
-          <td>mail</td>
-          <td>1/2/1996</td>
-          <td>by anassss</td>
-          <td>
-            <a type="button" href="#user-edit-screen" id="patient-edit-naviation"
-              class=" toggle-naviation btn btn-danger col-6 ">
-              delete
-            </a>
-            <a type="button" href="#user-edit-screen" id="patient-edit-naviation"
-              class=" toggle-naviation left btn btn-primary col-6">
-              edit
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Maria Anders</td>
-          <td>i@tste.com</td>
-          <td>mail</td>
-          <td>1/2/1996</td>
-          <td>by anas</td>
-          <td>
-            <a type="button" href="#user-edit-screen" id="patient-edit-naviation"
-              class="toggle-naviation btn btn-danger col-6 ">
-              delete
-            </a>
-            <a type="button" href="#user-edit-screen" id="patient-edit-naviation"
-              class="toggle-naviation left btn btn-primary col-6">
-              edit
-              </button>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Maria Anders</td>
-          <td>i@tste.com</td>
-          <td>mail</td>
-          <td>1/2/1996</td>
-          <td>by anas</td>
-          <td>
-            <a type="button" href="#user-edit-screen" id="patient-edit-naviation"
-              class=" toggle-naviation btn btn-danger col-6 ">
-              delete
-            </a>
-            <a type="button" href="#user-edit-screen" id="patient-edit-naviation"
-              class="toggle-naviation left btn btn-primary col-6">
-              edit
-            </a>
-          </td>
-        </tr>
-        <tr>
-
-      </table>
     </div>
+    <div class="container-fluid col-10 ">
 
-    <div class="user-list-screen" active="false">
-      <h1>
-        user-list-screen
-      </h1>
-      <a href="#user-edit-screen" class="toggle-naviation btn btn-warning" divToShow="user-edit-screen">Add</a>
+      <div class="patient-list-screen" active=" true">
+        <div class="row">
+          <div class="col-sm">
+            <h1 class="mar-top">patient-list-screen </h1>
+          </div>
+          <div class="col-sm">
+
+          </div>
+          <div class="col-sm">
+            <a href="#patient-edit-screen" class="toggle-naviation btn btn-warning addbutton"
+              divToShow="patient-edit-screen">Add</a>
+          </div>
+
+        </div>
+
+        <table class="table table-striped table-hover .table-sm col-11">
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>gender</th>
+            <th>DOB</th>
+            <th>Active</th>
+            <th>Creation</th>
+          </tr>
+
+          <tr>
+            <td>1</td>
+            <td>Maria Anders</td>
+            <td>i@tste.com</td>
+            <td>mail</td>
+            <td>1/2/1996</td>
+            <td>by anas</td>
+            <td>
+              <a type="button" href="#user-edit-screen" class=" toggle-naviation btn btn-danger col-6 ">
+                delete
+              </a>
+              <a type="button" href="#user-edit-screen" class="toggle-naviation left btn btn-primary col-6">
+                edit
+              </a>
+            </td>
+          </tr>
 
 
-    </div>
+        </table>
+      </div>
 
-    <div class="screen user-edit-screen" active="false">
-      <h1>user-edit-screen</h1>
-    </div>
+      <div class="user-list-screen" active="false">
+        <h1>
+          user-list-screen
+        </h1>
+        <a href="#user-edit-screen" class="toggle-naviation btn btn-warning addbutton"
+          divToShow="user-edit-screen">Add</a>
 
-    <div class="screen patient-edit-screen" active="false">
-      <h1 l1>Patient (New) : </h1>
-      <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
-        <div class="wrapper wrapper--w680">
-          <div class="card card-4">
-            <div class="card-body">
-              <h2 class="title">Registration Form</h2>
-              <form method="POST">
-                <div class="row row-space">
-                  <div class="col-6">
-                    <div class="input-group">
-                      <label class="label">first name</label>
-                      <input class="input--style-4" type="text" name="fname" required>
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="input-group">
-                      <label class="label">email</label>
-                      <input class="input--style-4" type="email" name="email" required>
-                    </div>
-                  </div>
-                </div>
-                <div class="row row-space">
-                  <div class="col-6">
-                    <div class="input-group">
-                      <label class="label">middalName</label>
+
+      </div>
+
+      <div class="screen user-edit-screen" active="false">
+        <h1>user-edit-screen</h1>
+      </div>
+
+      <div class="screen patient-edit-screen" active="false">
+        <h1 l1>Patient (New) : </h1>
+        <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+          <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+              <div class="card-body">
+                <h2 class="title">Registration Form</h2>
+                <form method="POST">
+                  <div class="row row-space">
+                    <div class="col-6">
                       <div class="input-group">
-                        <input class="input--style-4 " type="text" name="mName" required>
-
+                        <label class="label">first name</label>
+                        <input class="input--style-4" type="text" name="fname" required>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="input-group">
-                      <label class="label">lastCheck</label>
+                    <div class="col-6">
                       <div class="input-group">
-                        <input class="input--style-4 " type="date" name="lastCheck" required>
-
+                        <label class="label">email</label>
+                        <input class="input--style-4" type="email" name="email" required>
                       </div>
                     </div>
                   </div>
-                  <div class="col-6">
-                    <div class="input-group">
-                      <label class="label">last name</label>
+                  <div class="row row-space">
+                    <div class="col-6">
                       <div class="input-group">
-                        <input class="input--style-4 " type="text" name="lname" required>
+                        <label class="label">middalName</label>
+                        <div class="input-group">
+                          <input class="input--style-4 " type="text" name="mName" required>
 
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="input-group">
+                        <label class="label">lastCheck</label>
+                        <div class="input-group">
+                          <input class="input--style-4 " type="date" name="lastCheck" required>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="input-group">
+                        <label class="label">last name</label>
+                        <div class="input-group">
+                          <input class="input--style-4 " type="text" name="lname" required>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="input-group">
+                        <label class="label">Gender</label>
+                        <div class="p-t-10">
+                          <label class="radio-container m-r-45">Male
+                            <input type="radio" checked="checked" name="gender" required>
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="radio-container">Female
+                            <input type="radio" name="gender" required>
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-6">
-                    <div class="input-group">
-                      <label class="label">Gender</label>
-                      <div class="p-t-10">
-                        <label class="radio-container m-r-45">Male
-                          <input type="radio" checked="checked" name="gender" required>
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="radio-container">Female
-                          <input type="radio" name="gender" required>
-                          <span class="checkmark"></span>
-                        </label>
+                  <div class="row row-space">
+                    <div class="col-6">
+                      <div class="input-group">
+                        <label class="label">status</label>
+                        <div class="input--style-4 js-datepicker">
+                          <select name="subject">
+                            <option value="0" required>Draft</option>
+                            <option value="1">Saved</option>
+                            <option value="2">Deleted</option>
+                          </select>
+                          <div class="select-dropdown"></div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="input-group">
+                        <label class="label">Day of brith</label>
+                        <input class="input--style-4 " type="date" name="DOB" required>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="row row-space">
-                  <div class="col-6">
-                    <div class="input-group">
-                      <label class="label">status</label>
-                      <div class="input--style-4 js-datepicker">
-                        <select name="subject">
-                          <option value="0" required>Draft</option>
-                          <option value="1">Saved</option>
-                          <option value="2">Deleted</option>
-                        </select>
-                        <div class="select-dropdown"></div>
-                      </div>
+                  <div class="input-group">
 
-                    </div>
+                    <label class="label">Active</label>
+                    <input type="checkbox" name="Active" required>
                   </div>
-                  <div class="col-6">
-                    <div class="input-group">
-                      <label class="label">Day of brith</label>
-                      <input class="input--style-4 " type="date" name="DOB" required>
-                    </div>
-                  </div>
-                </div>
-                <div class="input-group">
-
-                  <label class="label">Active</label>
-                  <input type="checkbox" name="Active" required>
-                </div>
-                <div class="p-t-15">
-                  <button class="btn btn--radius-2 btn--blue" type="submit">Save</button>
-              </form>
-              <button class="toggle-naviation btn btn--radius-2 btn--blue" id="patient-edit-naviation">cansel</button>
+                  <div class="p-t-15">
+                    <button class="btn btn--radius-2 btn--blue" type="submit">Save</button>
+                </form>
+                <button class="toggle-naviation btn btn--radius-2 btn--blue" id="patient-edit-naviation">cansel</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-  </div>
+    </div>
 </body>
 <script src="jquery/jquery-3.4.1.min.js"></script>
 <script src="Task1_patientData.js"></script>
