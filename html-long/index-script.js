@@ -1,26 +1,21 @@
 $(document).ready(function() {
   $(".toggle-naviation ").click(function() {
-    $(".patient-list-screen").hide();
-    $(".user-list-screen").hide();
-    $(".patient-edit-screen").hide();
-    $(".user-edit-screen").hide();
-    debugger;
-    switch ($(this).data("naviation")) {
-      case "patient-list-screen":
-        $(".patient-list-screen").show();
-        break;
-      case "patient-edit-screen":
-        $(".patient-edit-screen").show();
-        break;
-      case "user-edit-screen":
-        $(".user-edit-screen").show();
-        break;
-      case "user-list-screen":
-        $(".user-list-screen").show();
-        break;
-    }
+    var navigation = $(this).data("naviation");
+    var screen = new Screen();
+    screen.hideAll();
+    screen.showScreen(navigation);
   });
 });
+
+class Screen {
+  hideAll() {
+    $(".Screen").hide();
+  }
+
+  showScreen(ScreenName) {
+    $("." + ScreenName).show();
+  }
+}
 class Patient {
   constructor(
     ID,

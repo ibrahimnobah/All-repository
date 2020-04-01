@@ -7,11 +7,13 @@
   padding: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  background: linear-gradient(to right, #a3098f, #f1f1f5, #a3098f);
+  background: #bdbde2;
   color: #111;
   float: inline-start;
 }
-
+.form-row {
+  margin-top: 5em;
+}
 /* Style sidebar links */
 .sidebar a {
   padding: 6px 8px 6px 16px;
@@ -62,7 +64,9 @@
 .mar-top {
   margin-top: 20px;
 }
-
+.left {
+  margin-left: 0.5em;
+}
 .sidenav {
   height: 100%;
   width: 160px;
