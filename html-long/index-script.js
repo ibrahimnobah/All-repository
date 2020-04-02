@@ -1,84 +1,71 @@
-$(document).ready(function() {
-  $(".toggle-naviation ").click(function() {
-    var navigation = $(this).data("naviation");
-    var screen = new Screen();
-    screen.hideAll();
-    screen.showScreen(navigation);
-  });
+$(document).ready(function () {
+  renderPatientPageData();
+  $(".toggle-naviation ").click(onNavigationLinkClick);
+
+
 });
 
-class Screen {
-  hideAll() {
-    $(".Screen").hide();
-  }
+function onNavigationLinkClick() {
+  var navigationEngiene = new NavigationEngiene();
+  var path = $(this).data("naviation");
+  navigationEngiene.navigate(path);
+}
 
-  showScreen(ScreenName) {
-    $("." + ScreenName).show();
+function renderPatientPageData() {
+  var patientList = new PatientList();
+  patientList.renderTable();
+}
+
+class NavigationEngiene {
+  navigate(path) {
+    $(".Screen").hide();
+    if (path === "patient-list-screen") {
+      renderPatientPageData();
+    }
+    $("." + path).show();
   }
 }
 class Patient {
-  constructor(
-    ID,
-    fname,
-    mname,
-    lname,
-    DOB,
-    gender,
-    email,
-    lastCheck,
-    CreatedBy,
-    creationDate,
-    status,
-    Active
-  ) {
-    this.ID = ID;
-    this.fname = fname;
-    this.mname = mname;
-    this.lname = lname;
-    this.DOB = DOB;
-    this.gender = gender;
-    this.email = email;
-    this.lastCheck = lastCheck;
-    this.CreatedBy = CreatedBy;
-    this.Active = Active;
-    this.creationDate = creationDate;
-    this.status = status;
+  constructor(data) {
+    this.ID = data.ID;
+    this.fname = data.fname;
+    this.mname = data.mname;
+    this.lname = data.lname;
+    this.DOB = data.DOB;
+    this.gender = data.gender;
+    this.email = data.email;
+    this.lastCheck = data.lastCheck;
+    this.CreatedBy = data.CreatedBy;
+    this.Active = data.Active;
+    this.creationDate = data.creationDate;
+    this.status = data.status;
   }
+
+
 }
-class listpatient {
-  constructor() {
-    this.listofpatient = [];
+class PatientList {
+
+  fromList(patientsData) {
+    this.patientList = [];
+    patientsData.forEach(element => {
+      var patient = new Patient(element);
+      this.patientList.push(patient);
+    });
   }
 
-  intiData() {
-    patientsData.forEach(element => {
-      var patient = new Patient(
-        element.ID,
-        element.fname,
-        element.mname,
-        element.lname,
-        element.DOB,
-        element.gender,
-        element.email,
-        element.lastCheck,
-        element.status,
-        element.Active,
-        element.creationDate,
-        element.CreatedBy
-      );
-
-      this.listofpatient.push(patient);
-    });
+  renderTable() {
+    this.fromList(patientsData);
     var table = $(".table");
-    var output =
-      "<table> <tr> <th>id</th><th>name</th><th>email</th><th>gender</th><th>DOB</th> <th>Active</th><th>Creation</th><th>opraion</th></tr>";
-    this.listofpatient.forEach(element => {
+    var tableHeader = $("#tableHeader");
+    table.empty()
+    table.append(tableHeader);
+    this.patientList.forEach(element => {
       if (element.gender === 1) {
         element.gender = "male";
       } else {
         element.gender = "female";
       }
-      if (element.Active === 1) {
+      if (element.Active === true) {
         element.Active = "True";
       } else {
         element.Active = "false";
@@ -94,33 +81,21 @@ class listpatient {
           element.status = "Deleted";
           break;
       }
-      output +=
-        "<tr><td>" +
-        element.ID +
-        "</td><td>" +
-        element.fname +
-        " " +
-        element.mname +
-        " " +
-        element.lname +
-        "</td><td>" +
-        element.email +
-        "</td><td>" +
-        element.gender +
-        "</td><td>" +
-        element.DOB.toLocaleString() +
-        "</td><td>" +
-        element.Active +
-        "</td><td>" +
-        element.CreatedBy +
-        "</td><td>" +
-        '<a type="button" href="#user-edit-screen" class=" toggle-naviation btn btn-danger col-6 "> delete</a>' +
-        '<a type="button" href="#user-edit-screen" class=" toggle-naviation left btn btn-primary col-6">edit</a>' +
-        "</td></tr>";
+      var output =
+        `<tr>
+        <td> ${element.ID}</td>
+        <td> ${element.fname} ${element.mname} ${element.lname}</td>
+        <td>${element.email}</td>
+        <td>${element.gender}</td>
+        <td>${element.DOB.toLocaleString()}</td>
+        <td>${element.Active}</td>
+        <td>${element.CreatedBy}</td>
+        <td> <a type="button" href="#user-edit-screen"  data-naviation="patient-edit-screen" class=" toggle-naviation btn btn-danger col-6 "> delete</a>
+        <a type="button" href="#user-edit-screen"  data-naviation="patient-edit-screen" class=" toggle-naviation left btn btn-primary col-6">edit</a> 
+        </td></tr>`;
+      table.append(output);
     });
-    output += "</table>";
-    table.html(output);
+
   }
 }
-var x = new listpatient();
-x.intiData();
+

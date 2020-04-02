@@ -10,40 +10,45 @@
 </head>
 
 <body>
-  <div class="row">
+  <div class="Master-container col ">
 
-    <div class="sliderbar col-2">
-      <div class="sidenav">
-        <a data-naviation="user-list-screen" href="#" class="toggle-naviation ">users</a>
-        <a data-naviation="patient-list-screen" href="#" class="toggle-naviation">patients</a>
-        <a href="script:void(0)">log out</a>
-      </div>
+
+    <div class="sidenav col-md-2">
+      <a data-naviation="user-list-screen" href="#" class="toggle-naviation ">users</a>
+      <a data-naviation="patient-list-screen" href="#" class="toggle-naviation">patients</a>
+      <a href="script:void(0)">log out</a>
     </div>
-    <div class="container-fluid col-9 ">
 
-      <div class="patient-list-screen Screen">
-        <div class="row">
-          <div class="col-10">
-            <h1 class="mar-top">Patients </h1>
-          </div>
-          <div class="col-1">
-            <a href="#patient-edit-screen" class="toggle-naviation btn btn-primary addbutton"
-              data-naviation="patient-edit-screen">Add</a>
-          </div>
 
+    <div class="container-fluid col-md-10">
+      <div class="patient-list-screen Screen row ">
+        <div class="col-md-12">
+          <div>
+            <h1>Patients </h1>
+          </div>
+          <div class="row">
+            <div class="col-auto mr-auto"></div>
+
+            <div class="col-auto">
+              <a href="#patient-edit-screen" class="toggle-naviation btn btn-primary addbutton "
+                data-naviation="patient-edit-screen">Add</a>
+            </div>
+          </div>
         </div>
-
-        <table class="table table-striped table-hover .table-sm col-11">
-          <tr>
-            <th>id</th>
-            <th>name</th>
-            <th>email</th>
-            <th>gender</th>
-            <th>DOB</th>
-            <th>Active</th>
-            <th>Creation</th>
-          </tr>
-        </table>
+        <div class="col-md-12">
+          <table class="table table-striped table-hover .table-sm ">
+            <tr id="tableHeader">
+              <th>id</th>
+              <th>name</th>
+              <th>email</th>
+              <th>gender</th>
+              <th>DOB</th>
+              <th>Active</th>
+              <th>Creation</th>
+              <th>opration</th>
+            </tr>
+          </table>
+        </div>
       </div>
 
       <div class="user-list-screen hidden Screen">
@@ -54,7 +59,7 @@
           data-naviation="user-edit-screen">Add</a>
       </div>
 
-      <div class="user-edit-screen hidden Screen">
+      <div class="user-edit-screen hidden  Screen">
         <h1>User edit</h1>
       </div>
 
@@ -62,106 +67,109 @@
         <h1 l1>Patient (New) : </h1>
         <form id="nameform">
           <div class="form-row">
-
-            <div class="col-1">
-              <label class="font-weight-bold">firstName</label>
+            <div class="col-md-4 mb-3">
+              <label class="font-weight-bold">First name</label>
+              <input type="text" class="fname form-control" placeholder="First name" required>
+              <div class="valid-tooltip">
+                Looks good!
+              </div>
             </div>
-            <div class="col-5">
-              <input class="fname form-control" type="text" required>
-            </div>
-            <div class="col-2">
-              <label class="font-weight-bold">Email</label>
-            </div>
-            <div class="col-4">
-              <input class="email form-control" type="email" required>
-            </div>
-
-          </div>
-          <div class="form-row">
-
-            <div class="col-1">
+            <div class="col-md-4 mb-3">
               <label class="font-weight-bold">middleName</label>
+              <input type="text" class="mname form-control" placeholder="middleName" required>
+              <div class="valid-tooltip">
+                Looks good!
+              </div>
             </div>
-            <div class="col-5">
-              <input class="mname form-control  " type="text">
-            </div>
-            <div class="col-2">
-              <label class="font-weight-bold">Date of Birth</label>
-            </div>
-            <div class="col-4">
-              <input class="DateofBirth form-control" type="date" required>
-            </div>
-
-          </div>
-          <div class="form-row">
-
-            <div class="col-1">
+            <div class="col-md-4 mb-3">
               <label class="font-weight-bold">lastName</label>
-            </div>
-            <div class="col-5">
-              <input class="lname form-control   " type="text" required>
-            </div>
-            <div class="col-2">
-              <label class="font-weight-bold">last Check</label>
-            </div>
-            <div class="col-4">
-              <input class="lastCheck form-control" type="date">
-            </div>
+              <div class="input-group">
 
+                <input type="text" class="lname form-control" placeholder="lastName"
+                  aria-describedby="validationTooltipUsernamePrepend" required>
+                <div class="invalid-tooltip">
+                  Please choose a unique and valid username.
+                </div>
+              </div>
+            </div>
           </div>
           <div class="form-row">
-            <div class="col-1">
-              <label class="font-weight-bold">Status</label>
+            <div class="col-md-4 mb-3">
+              <label class="font-weight-bold">Date of Birth</label>
+              <input class="DateofBirth form-control" type="date" required>
+
             </div>
-            <div class="col-5">
+            <div class="col-md-4 mb-3">
+              <label class="font-weight-bold">Status</label>
               <select id="Status" class="form-control " required>
                 <option value="0">Draft</option>
                 <option value="1">Saved</option>
                 <option value="2">Deleted</option>
               </select>
             </div>
-            <div class="col-3">
-              <label class="font-weight-bold">gender</label>
-            </div>
-            <div class="col-3">
-              <div class="form-check form-check-inline">
-
-                <input type="radio" form="nameform" class="gender form-check-input" name="gender" value="1" required>
-                <label class="form-check-label font-weight-bold" for="inlineCheckbox1">male</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input type="radio" form="nameform" class="gender form-check-input" name="gender" value="2" required>
-
-                <label class="form-check-label font-weight-bold" for="inlineCheckbox2"> Female</label>
-              </div>
+            <div class="col-md-4 mb-3">
+              <label class="font-weight-bold">last Check</label>
+              <input class="lastCheck form-control" type="date">
 
             </div>
-            <div class="row form-row">
-              <div class="col-6 col-sm-4">
-                <label class="form-check-label" class="font-weight-bold">Active</label>
-              </div>
-              <div class="col-6 col-sm-4">
-                <input class="col-md-auto " type="checkbox" required>
-              </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label class="font-weight-bold">Email</label>
+              <input class="email form-control" type="email" required>
 
-              <div class="w-100 d-none d-md-block form-row"></div>
+            </div>
+            <div class="col-md-2 md-2"> <label class="font-weight-bold"></label></div>
+            <div class="col-md-3 md-4">
+              <div class="col-4 col-sm-4">
+                <label class="font-weight-bold">gender</label>
+              </div>
+              <div class="row">
 
-              <div class="col-6 col-sm-4 ">
-                <button type="submit" form="nameform" class="left btn btn-primary l1 " value="Submit">
-                  save
-                </button>
+                <div class="col-4 col-sm-4">
+                  <input type="radio" form="nameform" class="gender form-check-input" name="gender" value="1" required>
+
+                  <label class=" font-weight-bold" for="inlineCheckbox1">male</label>
+                </div>
+                <div class="col-4 col-sm-4 ">
+                  <input type="radio" form="nameform" class="gender form-check-input" name="gender" value="2" required>
+
+                  <label class="form-check-label font-weight-bold" for="inlineCheckbox2"> Female</label>
+                </div>
               </div>
-              <div class="col-6 col-sm-4"><button type="submit" form="nameform" class="left btn btn-danger l1 "
-                  value="Submit">
-                  cancel
-                </button>
-              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              <input class="col-md-auto " type="checkbox" required>
+              <label class="form-check-label">
+                Active
+              </label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 col-sm-4 ">
+              <button type="submit" form="nameform" class="left btn btn-primary l1 " value="Submit">
+                save
+              </button>
+            </div>
+             <div class="toggle-naviation col-6 col-sm-4" data-naviation="patient-list-screen">
+               <a class="toggle-naviation left btn btn-danger l1" data-naviation="patient-list-screen" href="#">
+                cancel
+               </a>
             </div>
         </form>
-
       </div>
+    </div>
 
 
+  </div>
+  </div>
+
+  </div>
 
 </body>
 <script src="jquery/jquery-3.4.1.min.js"></script>
