@@ -2,15 +2,7 @@
   display: none;
 }
 
-.patient-edit-screen {
-  border-style: solid;
-  padding: 20px;
-  margin-top: 20px;
-  margin-left: 25px;
-  background: #f2f2f5;
-  color: rgb(12, 80, 226);
-  float: inline-start;
-}
+
 .form-row {
   margin-top: 5em;
 }

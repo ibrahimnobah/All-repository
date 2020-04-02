@@ -65,103 +65,92 @@
 
       <div class="patient-edit-screen hidden Screen">
         <h1 l1>Patient (New) : </h1>
-        <form id="nameform">
-          <div class="form-row">
-            <div class="col-md-4 mb-3">
-              <label class="font-weight-bold">First name</label>
-              <input type="text" class="fname form-control" placeholder="First name" required>
-              <div class="valid-tooltip">
-                Looks good!
-              </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label class="font-weight-bold">middleName</label>
-              <input type="text" class="mname form-control" placeholder="middleName" required>
-              <div class="valid-tooltip">
-                Looks good!
-              </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label class="font-weight-bold">lastName</label>
-              <div class="input-group">
 
-                <input type="text" class="lname form-control" placeholder="lastName"
-                  aria-describedby="validationTooltipUsernamePrepend" required>
-                <div class="invalid-tooltip">
-                  Please choose a unique and valid username.
-                </div>
-              </div>
+        <form>
+          <div class="form-group row">
+            <label for="imputFirstname" class="col-sm-2 col-form-label">first Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="imputFirstname" placeholder="first Name">
             </div>
           </div>
-          <div class="form-row">
-            <div class="col-md-4 mb-3">
-              <label class="font-weight-bold">Date of Birth</label>
-              <input class="DateofBirth form-control" type="date" required>
-
+          <div class="form-group row">
+            <label for="imputFirstname" class="col-sm-2 col-form-label">middleName</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="middleName" placeholder="middleName">
             </div>
-            <div class="col-md-4 mb-3">
-              <label class="font-weight-bold">Status</label>
+          </div>
+          <div class="form-group row">
+            <label for="imputFirstname" class="col-sm-2 col-form-label">lastName</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="imputFirstname" placeholder="last Name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="imputFirstname" class="col-sm-2 col-form-label">Date of Birth</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="imputFirstname" >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="imputFirstname" class="col-sm-2 col-form-label">last Check</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="imputFirstname" >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="imputFirstname" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="imputFirstname" placeholder="Firstname">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="imputFirstname" class="col-sm-2 col-form-label">Status</label>
+            <div class="col-sm-10">
               <select id="Status" class="form-control " required>
                 <option value="0">Draft</option>
                 <option value="1">Saved</option>
                 <option value="2">Deleted</option>
               </select>
             </div>
-            <div class="col-md-4 mb-3">
-              <label class="font-weight-bold">last Check</label>
-              <input class="lastCheck form-control" type="date">
-
-            </div>
           </div>
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label class="font-weight-bold">Email</label>
-              <input class="email form-control" type="email" required>
-
-            </div>
-            <div class="col-md-2 md-2"> <label class="font-weight-bold"></label></div>
-            <div class="col-md-3 md-4">
-              <div class="col-4 col-sm-4">
-                <label class="font-weight-bold">gender</label>
-              </div>
-              <div class="row">
-
-                <div class="col-4 col-sm-4">
-                  <input type="radio" form="nameform" class="gender form-check-input" name="gender" value="1" required>
-
-                  <label class=" font-weight-bold" for="inlineCheckbox1">male</label>
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">gender</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="genderRadio" id="maleRadio" value="male" checked>
+                  <label class="form-check-label" for="gridRadios1">
+                    Male
+                  </label>
                 </div>
-                <div class="col-4 col-sm-4 ">
-                  <input type="radio" form="nameform" class="gender form-check-input" name="gender" value="2" required>
-
-                  <label class="form-check-label font-weight-bold" for="inlineCheckbox2"> Female</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="genderRadio" id="femaleRadio" value="female">
+                  <label class="form-check-label" for="gridRadios2">
+                    Female
+                  </label>
                 </div>
               </div>
             </div>
-
-          </div>
-
-          <div class="form-group">
-            <div class="form-check">
-              <input class="col-md-auto " type="checkbox" required>
-              <label class="form-check-label">
-                Active
-              </label>
+          </fieldset>
+          <div class="form-group row">
+            <div class="col-sm-2">Active</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="activeCheck">
+              
+              </div>
             </div>
           </div>
-
-          <div class="row">
-            <div class="col-6 col-sm-4 ">
-              <button type="submit" form="nameform" class="left btn btn-primary l1 " value="Submit">
-                save
-              </button>
+          <div class="form-group row">
+            <div class="col">
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="submit" class="btn btn-danger">Cancle</button>
             </div>
-             <div class="toggle-naviation col-6 col-sm-4" data-naviation="patient-list-screen">
-               <a class="toggle-naviation left btn btn-danger l1" data-naviation="patient-list-screen">
-                cancel
-               </a>
-            </div>
+          </div>
+       
         </form>
+        
+  
       </div>
     </div>
 
