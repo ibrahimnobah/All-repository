@@ -1,8 +1,5 @@
 $(document).ready(function () {
   renderPatientPageData();
-  $(".toggle-naviation ").click(onNavigationLinkClick);
-
-
 });
 
 function onNavigationLinkClick() {
@@ -90,12 +87,14 @@ class PatientList {
         <td>${element.DOB.toLocaleString()}</td>
         <td>${element.Active}</td>
         <td>${element.CreatedBy}</td>
-        <td> <a type="button" href="#user-edit-screen"  data-naviation="patient-edit-screen" class=" toggle-naviation btn btn-danger col-6 "> delete</a>
-        <a type="button" href="#user-edit-screen"  data-naviation="patient-edit-screen" class=" toggle-naviation left btn btn-primary col-6">edit</a> 
-        </td></tr>`;
+        <td> <a type="button" href="#patient-edit-screen"  data-naviation="patient-edit-screen" class="toggle-naviation btn btn-danger col-6"> delete</a>
+        <a type="button" href="#patient-edit-screen"  data-naviation="patient-edit-screen" class="toggle-naviation left btn btn-primary col-6">edit</a> 
+        </td>
+        </tr>`;
       table.append(output);
     });
-
+    $(".toggle-naviation ").unbind();
+    $(".toggle-naviation ").click(onNavigationLinkClick);
   }
 }
 
