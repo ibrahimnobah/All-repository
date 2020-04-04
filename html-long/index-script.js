@@ -1,6 +1,12 @@
-$(document).ready(function () {
-  renderPatientPageData();
-});
+
+$(document).ready(init);
+
+function init (){
+   renderPatientPageData();
+  $(".toggle-naviation ").unbind();
+  $(".toggle-naviation ").click(onNavigationLinkClick);
+}
+
 
 function onNavigationLinkClick() {
   var navigationEngiene = new NavigationEngiene();
@@ -18,6 +24,7 @@ class NavigationEngiene {
     $(".Screen").hide();
     if (path === "patient-list-screen") {
       renderPatientPageData();
+      init();
     }
     $("." + path).show();
   }
@@ -54,7 +61,8 @@ class PatientList {
     this.fromList(patientsData);
     var table = $(".table");
     var tableHeader = $("#tableHeader");
-    table.empty()
+    var tableData = $(".tableData");
+    tableData.empty();
     table.append(tableHeader);
     this.patientList.forEach(element => {
       if (element.gender === 1) {
@@ -79,7 +87,7 @@ class PatientList {
           break;
       }
       var output =
-        `<tr>
+        `<tr  class="tableData">
         <td> ${element.ID}</td>
         <td> ${element.fname} ${element.mname} ${element.lname}</td>
         <td>${element.email}</td>
@@ -93,8 +101,7 @@ class PatientList {
         </tr>`;
       table.append(output);
     });
-    $(".toggle-naviation ").unbind();
-    $(".toggle-naviation ").click(onNavigationLinkClick);
+
   }
 }
 
