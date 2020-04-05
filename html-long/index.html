@@ -10,6 +10,19 @@
 </head>
 
 <body>
+
+  <template id="patient-template">
+    <tr class="tableData"> <td> {{ID}}</td> <td> {{fname}} {{mname}} {{lname}}</td>
+      <td>{{email}}</td>
+      <td>{{gender}}</td>
+      <td>{{DOB}}</td>
+      <td>{{Active}}</td>
+      <td>{{CreatedBy}}</td>
+      <td> <a type="button" href="#patient-edit-screen"  data-naviation="patient-edit-screen" class="toggle-naviation btn btn-danger col-6"> delete</a>
+      <a type="button" href="#patient-edit-screen"  data-naviation="patient-edit-screen" class="toggle-naviation left btn btn-primary col-6">edit</a> 
+      </td>
+      </tr>
+  </template>
   <div class="Master-container col ">
 
 
@@ -172,11 +185,11 @@
 </body>
 <script src="jquery/jquery-3.4.1.min.js"></script>
 <script src="Task1_patientData.js"></script>
-<script src="index-script.js"></script>
-<script src="Patient-script.js"></script>
-<script src="PatientList-script.js"></script>
-<script src="NavigationEngiene-script.js"></script>
-<script src="RenderEnginescript.js"></script>
+<script src="index.js"></script>
+<script src="Patient.js"></script>
+<script src="PatientList.js"></script>
+<script src="NavigationEngiene.js"></script>
+<script src="RenderEngine.js"></script>
 
 
 

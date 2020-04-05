@@ -11,8 +11,7 @@ class Render{
           Element=Element.replace('}}','');
           myString=myString.replace('{{'+Element+'}}',obj[Element]);
         });
-        myString=myString.replace("{{",'');
-        myString=myString.replace("}}",'');
+     
         return myString;
 }
           
