@@ -17,8 +17,5 @@ function onNavigationLinkClick() {
 function renderPatientPageData() {
   var patientList = new PatientList();
   patientList.renderTable();
-  var x=new Render();
-  debugger;
-  x.renderTemplate(patientsData[0],"<tr data-id='{{ID}}><td>{{fname}} {{mname}} {{lname}} </td><td>{{gender}}");
 }
 

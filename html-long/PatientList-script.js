@@ -37,19 +37,20 @@ class PatientList {
             element.status = "Deleted";
             break;
         }
-        var output =
-          `<tr  class="tableData">
-          <td> ${element.ID}</td>
-          <td> ${element.fname} ${element.mname} ${element.lname}</td>
-          <td>${element.email}</td>
-          <td>${element.gender}</td>
-          <td>${element.DOB.toLocaleString()}</td>
-          <td>${element.Active}</td>
-          <td>${element.CreatedBy}</td>
-          <td> <a type="button" href="#patient-edit-screen"  data-naviation="patient-edit-screen" class="toggle-naviation btn btn-danger col-6"> delete</a>
-          <a type="button" href="#patient-edit-screen"  data-naviation="patient-edit-screen" class="toggle-naviation left btn btn-primary col-6">edit</a> 
-          </td>
-          </tr>`;
+       element.DOB= element.DOB.toLocaleString();
+       var x= new Render();
+        var output =x.renderTemplate(element, `<tr  class="tableData">
+        <td> {{ID}}</td>
+        <td> {{fname}} {{mname}} {{lname}}</td>
+        <td>{{email}}</td>
+        <td>{{gender}}</td>
+        <td>{{DOB}}</td>
+        <td>{{Active}}</td>
+        <td>{{CreatedBy}}</td>
+        <td> <a type="button" href="#patient-edit-screen"  data-naviation="patient-edit-screen" class="toggle-naviation btn btn-danger col-6"> delete</a>
+        <a type="button" href="#patient-edit-screen"  data-naviation="patient-edit-screen" class="toggle-naviation left btn btn-primary col-6">edit</a> 
+        </td>
+        </tr>`);
         table.append(output);
       });
   
