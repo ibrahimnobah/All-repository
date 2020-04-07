@@ -18,8 +18,8 @@
       <td>{{DOB}}</td>
       <td>{{Active}}</td>
       <td>{{CreatedBy}}</td>
-      <td> <a type="button" href="#patient-edit-screen"  data-naviation="patient-edit-screen" class="toggle-naviation btn btn-danger col-6"> delete</a>
-      <a type="button" href="#patient-edit-screen"  data-naviation="patient-edit-screen" class="toggle-naviation left btn btn-primary col-6">edit</a> 
+      <td> <a type="button" href="#"  data-naviation="patient-edit-screen" data-id= "{{ID}}" class="toggle-naviation btn btn-danger col-6"> delete</a>
+      <a type="button" href="#"  data-naviation="patient-edit-screen" data-id= "{{ID}}" class="toggle-naviation edit left btn btn-primary col-6">edit</a> 
       </td>
       </tr>
   </template>
@@ -79,32 +79,32 @@
       <div class="patient-edit-screen hidden Screen">
         <h1 l1>Patient (New) : </h1>
 
-        <form>
+        <form id="nameform" data-naviation="patient-list-screen">
           <div class="row">
           <div class="col">
-          <div class="form-group row">
+          <div  class="form-group row">
           
             <label for="imputFirstname" class="col-sm-2 col-form-label">first Name</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="imputFirstname" placeholder="first Name">
+              <input type="text" class="firstName form-control"  placeholder="first Name"required>
             </div>
           </div>
           <div class="form-group row">
             <label for="imputFirstname" class="col-sm-2 col-form-label">middleName</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="middleName" placeholder="middleName">
+              <input type="text" class="middleName form-control" placeholder="middleName">
             </div>
           </div>
           <div class="form-group row">
             <label for="imputFirstname" class="col-sm-2 col-form-label">lastName</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="imputFirstname" placeholder="last Name">
+              <input type="text" class="lastName form-control" placeholder="last Name" required>
             </div>
           </div>
           <div class="form-group row">
             <label for="imputFirstname" class="col-sm-2 col-form-label">Date of Birth</label>
             <div class="col-sm-10">
-              <input type="date" class="form-control" id="imputFirstname" >
+              <input type="date" class="DOB form-control" required>
             </div>
           </div>
         </div>
@@ -113,22 +113,22 @@
           <div class="form-group row">
             <label for="imputFirstname" class="col-sm-2 col-form-label">last Check</label>
             <div class="col-sm-10">
-              <input type="date" class="form-control" id="imputFirstname" >
+              <input type="date" class="lastCheck form-control" required>
             </div>
           </div>
-          <div class="form-group row">
-            <label for="imputFirstname" class="col-sm-2 col-form-label">Email</label>
+          <div class="form-group row" >
+            <label for="imputFirstname" class="col-sm-2 col-form-label" >Email</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="Email" placeholder="Email">
+              <input type="email" class="email form-control"  placeholder="Email" required>
             </div>
           </div>
           <div class="form-group row">
             <label for="imputFirstname" class="col-sm-2 col-form-label">Status</label>
             <div class="col-sm-10">
-              <select id="Status" class="form-control " required>
-                <option value="0">Draft</option>
-                <option value="1">Saved</option>
-                <option value="2">Deleted</option>
+              <select id="Status" class="Status form-control " autofocus required>
+                <option value="0" id="Draft">Draft</option>
+                <option value="1" id="Saved">Saved</option>
+                <option value="2" id="Deleted">Deleted</option>
               </select>
             </div>
           </div>
@@ -138,13 +138,13 @@
               <label >gender</label>
             </div>
             <div class="col-sm-4">
-            <input class="form-check-input" type="radio" name="genderRadio" id="maleRadio" value="male" checked>
+            <input class="gender form-check-input" type="radio" name="genderRadio" id="maleRadio" value="male"  required>
             <label class="form-check-label" for="gridRadios1">
               Male
              </label>
                 </div>
                 <div class="col-sm-4">
-                  <input class="form-check-input" type="radio" name="genderRadio" id="femaleRadio" value="female">
+                  <input class="gender form-check-input" type="radio" name="genderRadio" id="femaleRadio" value="female">
                   <label class="form-check-label" for="gridRadios2">
                     Female
                   </label>
@@ -157,39 +157,28 @@
           <div class="col-sm-2">Active</div>
           <div class="col-sm-10">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="activeCheck">
-            
-            </div>
+              <input class="form-check-input" type="checkbox" id="activeCheck" required>
+             </div>
           </div>
         </div>
         <div class="form-group row">
           <div class="col">
-            <button type="submit" data-naviation="patient-list-screen" class="toggle-naviation  btn btn-primary">Save</button>
-            <button type="submit" data-naviation="patient-list-screen" class="toggle-naviation btn btn-danger">Cancle</button>
-          </div>
-        </div>
-     
+            <button type="submit"  class="btn btn-primary">Save</button>
       </form>
+
+            <button type="button"data-naviation="patient-list-screen" id="cancle" class="toggle-naviation btn btn-danger">Cancle</button>
+          </div>
+      
       </div>
-
-        
-        </div>
-    </div>
-
-
-  
-  </div>
-
-
-
 </body>
+
 <script src="jquery/jquery-3.4.1.min.js"></script>
-<script src="Task1_patientData.js"></script>
-<script src="index.js"></script>
 <script src="Patient.js"></script>
-<script src="PatientList.js"></script>
+<script src="index.js"></script>
 <script src="NavigationEngiene.js"></script>
 <script src="RenderEngine.js"></script>
+<script src="Task1_patientData.js"></script>
+
 
 
 

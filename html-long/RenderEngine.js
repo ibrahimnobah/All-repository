@@ -2,6 +2,7 @@ class Render{
     
     renderTemplate(obj,templateText)
     { 
+        var table = $(".table");
         var arr=[];
         var myString = templateText;
         const regexpModifications = /\{{.*?\}}/g;
@@ -11,13 +12,7 @@ class Render{
           Element=Element.replace('}}','');
           myString=myString.replace('{{'+Element+'}}',obj[Element]);
         });
-     
-        return myString;
+        table.append(myString);
+
 }
-          
-
-    
-    
-
-
 }
