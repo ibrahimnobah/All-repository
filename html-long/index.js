@@ -1,62 +1,77 @@
-debugger;
 $(document).ready(init);
 
 function init (){
-  var render=new Render();
-  renderPatientPageData()
-  renderTable(render);
+  var patientlist=new Patientlist();
+  patientlist.inti();
   $(".toggle-naviation ").click(onNavigationLinkClick);
   $("#nameform").submit(function(){ 
-    save(Render);
-  
+    patientlist.createORupdate(patientlist);
   });
   $("#nameform").submit(onNavigationLinkClick);
-  $(".edit ").click(edit);
-  $("#cancle ").click(emptyForm);
+  $(".edit ").click(function(){
+     patientlist.edit(patientlist,this)
+    }
+  );
+  $("#cancle ").click(patientlist.emptyForm);
 }
 
 function onNavigationLinkClick() {
   var navigationEngiene = new NavigationEngiene();
   var path = $(this).data("naviation");
   navigationEngiene.navigate(path);
+
+
 }
-function emptyForm()
+class Patientlist{
+ constructor(){
+  this.patientlist=[];
+  this.render=new Render();
+ }
+ 
+ inti(){
+  this.renderPatientPageData();
+  this.renderTable();
+ }
+ 
+  emptyForm()
 { 
+
+  $('#nameform').attr('data-id',"empty"); 
 document.getElementsByClassName("firstName")[0].value="";
 document.getElementsByClassName("middleName")[0].value="";
 document.getElementsByClassName("lastName")[0].value="";
 document.getElementsByClassName("email")[0].value="";
 document.getElementsByClassName("DOB")[0].value="";
-document.getElementsByClassName("lastCheck")[0].value=getdate("");
+document.getElementsByClassName("lastCheck")[0].value="";
 document.getElementById("Status").value ="";
 
 }
 
-
-function edit()
+ edit(obj,button)
 {
-     var List= fromList();
-     var id = $(this).data("id");
-     var patient= List.find(x=> x.ID===id);
+     var id = $(button).data("id");
+     var patient= obj.patientlist.find(x=> x.ID===id);
+     $('#nameform').attr('data-id',patient.ID); 
+      $("").data('id',patient.ID+"");
      document.getElementById("activeCheck").checked =true;
      document.getElementsByClassName("firstName")[0].value=patient.fname;
      document.getElementsByClassName("middleName")[0].value=patient.mname;
      document.getElementsByClassName("lastName")[0].value=patient.lname;
      document.getElementsByClassName("email")[0].value=patient.email;
-     document.getElementsByClassName("DOB")[0].value=getdate(patient.DOB);
-     valueOfGender(patient.gender);
-     valueOfStatus(patient.status);
-     document.getElementsByClassName("lastCheck")[0].value=getdate(patient.lastCheck);
-
+     document.getElementsByClassName("DOB")[0].value=obj.getdate(patient.DOB);
+     obj.valueOfGender(patient.gender);
+     obj.valueOfStatus(patient.status);
+     document.getElementsByClassName("lastCheck")[0].value=obj.getdate(patient.lastCheck);
     }
-  function valueOfGender(genderId) {
+
+ valueOfGender(genderId) {
       if (genderId === "Male") {
         document.getElementById("maleRadio").checked=true;
       }else
       document.getElementById("femaleRadio").checked=true;
      }
 
- function valueOfStatus(statusId) {
+ valueOfStatus(statusId) {
     
   switch (statusId) {
       case "Draft":
@@ -72,7 +87,8 @@ function edit()
 
     }
   }
-  function getdate(date){
+
+ getdate(date){
   var d = new Date(date);
   var curr_date = d.getDate();
   var curr_month = d.getMonth() + 1; 
@@ -81,43 +97,42 @@ function edit()
 
  }   
 
-
-
-
-
-function renderPatientPageData() {
+ renderPatientPageData() {
 
   var tableData = $(".tableData");
   tableData.empty();
 }
 
-function renderTable(render) {
+ renderTable() {
 
   var renderEntine = document.getElementById("patient-template").innerHTML;
-  var PatientList=fromList();
-  PatientList.forEach(patient => {
-  render.renderTemplate(patient, renderEntine);
+  this.fromList();
+  this.patientlist.forEach(patient => {
+  this.render.renderTemplate(patient, renderEntine);
   });
 
 }
-function fromList() {
-  var PatientList=[];
+
+ fromList() {
+
   patientsData.forEach(element => {
     var patient = new Patient(element);
-    PatientList.push(patient);
+    this.patientlist.push(patient);
   });
 
-  return PatientList;
+
 }
 
-function save(render)
-{    
+ createORupdate(obj)
+{    debugger;
+     var Id= $("#nameform").data("id");
+
       var renderEntine = document.getElementById("patient-template").innerHTML;
       var firstName = document.getElementsByClassName("firstName")[0].value;
       var middleName = document.getElementsByClassName("middleName")[0].value;
       var lastName = document.getElementsByClassName("lastName")[0].value;
       var Email = document.getElementsByClassName("email")[0].value;
-      var DateofBirth = getdate(document.getElementsByClassName("DOB")[0].value);
+      var DateofBirth = obj.getdate(document.getElementsByClassName("DOB")[0].value);
       var radios = document.getElementsByName("genderRadio");
       var Gender = "";
       for (var i = 0, length = radios.length; i < length; i++) {
@@ -126,14 +141,16 @@ function save(render)
           break;
         }
       }
-      var lCheck = document.getElementsByClassName("lastCheck")[0].value;
+      var lCheck =obj.getdate(document.getElementsByClassName("lastCheck")[0].value);
       var Status = document.getElementById("Status").value;
-      
+      if(Id==="empty")
+      {
       var tmp = patientsData.pop();
       patientsData.push(tmp);
-      var Id = tmp.ID + 1;
+      Id = tmp.ID + 1;
+      }
       var newone={
-        ID:Id,
+        ID:parseInt(Id),
         fname:firstName, 
         mname:middleName, 
         lname:lastName,
@@ -146,11 +163,11 @@ function save(render)
         status:Status
        } ;
        var newpatient=new Patient(newone);
-       
-       render.renderTemplate(newpatient, renderEntine);
-       patientsData.push(newpatient);
-       init();
-}
+       obj.render.renderTemplate(newpatient, renderEntine);
 
+
+
+}
+}
 
 

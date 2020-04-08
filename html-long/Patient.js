@@ -4,10 +4,10 @@ class Patient {
     this.fname = data.fname;
     this.mname = data.mname;
     this.lname = data.lname;
-    this.DOB = getdate(data.DOB);
+    this.DOB = this.getdate(data.DOB);
     this.gender = this.valueOfGender(data.gender);
     this.email = data.email;
-    this.lastCheck =getdate(data.lastCheck);
+    this.lastCheck =this.getdate(data.lastCheck);
     this.CreatedBy = data.CreatedBy;
     this.Active = data.Active;
     this.creationDate = data.creationDate;
