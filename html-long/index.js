@@ -22,6 +22,7 @@ function onNavigationLinkClick() {
 
 
 }
+
 class Patientlist{
  constructor(){
   this.patientlist=[];
