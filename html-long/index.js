@@ -2,7 +2,7 @@ $(document).ready(function() {
   var patientlist=new PatientList();
   var rounter=new RouterEngine();
   var patientedit=new PatientEdit();
-  patientlist.inti(patientlist);
+  patientlist.inti();
   rounter.init(patientlist);
   patientedit.init(patientedit,patientlist);
 
