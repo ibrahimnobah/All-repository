@@ -24,7 +24,7 @@ class PatientList{
   emptyForm()
 { 
 
-  $('#nameform').attr('data-id',"empty"); 
+$('#nameform').attr('data-id',"empty"); 
 document.getElementsByClassName("firstName")[0].value="";
 document.getElementsByClassName("middleName")[0].value="";
 document.getElementsByClassName("lastName")[0].value="";
@@ -137,7 +137,7 @@ document.getElementById("Status").value ="";
        This.render.renderTemplate(newpatient, renderEntine);
 }
 }
- class RouterEngine{
+class RouterEngine{
     init(opj){
 
       $(".toggle-naviation ").click(this.onNavigationLinkClick);
@@ -145,23 +145,17 @@ document.getElementById("Status").value ="";
        $("#nameform").submit(function(){ 
         opj.createORupdate(opj.patientlist);
       });
-     
     }
 
     onNavigationLinkClick() {
       var navigationEngiene = new NavigationEngiene();
       var path = $(this).data("naviation");
       navigationEngiene.navigate(path);
-    
-    
     }
-
-
  }
 class PatientEdit{
   init(This,obj){
-
-  $(".edit ").click(function(){
+    $(".edit ").click(function(){
     This.edit(obj,this)
   });
   

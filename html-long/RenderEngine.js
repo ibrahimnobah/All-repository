@@ -1,6 +1,5 @@
 class RendererEngine{
     init(){
-
  
     }
 
