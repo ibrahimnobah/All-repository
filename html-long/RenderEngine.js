@@ -1,5 +1,9 @@
-class Render{
-    
+class RendererEngine{
+    init(){
+
+ 
+    }
+
     renderTemplate(obj,templateText)
     { 
         var table = $(".table");
