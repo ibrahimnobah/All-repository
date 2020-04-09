@@ -20,28 +20,30 @@ class PatientList{
   this.renderTable();
   $("#cancle ").click(this.emptyForm);
  }
- 
   emptyForm()
 { 
-
-$('#nameform').attr('data-id',"empty"); 
-document.getElementsByClassName("firstName")[0].value="";
-document.getElementsByClassName("middleName")[0].value="";
-document.getElementsByClassName("lastName")[0].value="";
-document.getElementsByClassName("email")[0].value="";
-document.getElementsByClassName("DOB")[0].value="";
-document.getElementsByClassName("lastCheck")[0].value="";
-document.getElementById("Status").value ="";
+    $('#nameform').attr('data-id',"empty"); 
+    document.getElementsByClassName("firstName")[0].value="";
+    document.getElementsByClassName("middleName")[0].value="";
+    document.getElementsByClassName("lastName")[0].value="";
+    document.getElementsByClassName("email")[0].value="";
+    document.getElementsByClassName("DOB")[0].value="";
+    document.getElementsByClassName("lastCheck")[0].value="";
+    document.getElementById("Status").value ="";
 
 }
 
 
  valueOfGender(genderId) {
-      if (genderId === "Male") {
-        document.getElementById("maleRadio").checked=true;
-      }else
-      document.getElementById("femaleRadio").checked=true;
-     }
+ if (genderId === "Male")
+  {
+          document.getElementById("maleRadio").checked=true;
+  }
+else
+   {
+        document.getElementById("femaleRadio").checked=true;
+   }
+      }
 
  valueOfStatus(statusId) {
     
