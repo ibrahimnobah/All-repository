@@ -2,7 +2,7 @@
 class PatientEdit {
     init() {
       $(".edit ").click(this.edit);
-      $("#cancle ", "addbutton").click(this.emptyForm);
+      $(".emptyForm").click(this.emptyForm);
     }
     edit() {
       var id = $(this).data("id");
@@ -21,7 +21,7 @@ class PatientEdit {
   
 
     emptyForm() {
-      $('#nameform').attr('data-id', "empty");
+      $('#nameform').attr('data-id', "-1");
       document.getElementsByClassName("firstName")[0].value = "";
       document.getElementsByClassName("middleName")[0].value = "";
       document.getElementsByClassName("lastName")[0].value = "";

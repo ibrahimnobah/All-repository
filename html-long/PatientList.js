@@ -8,12 +8,12 @@ class PatientList {
     inti() {
       this.renderPatientPageData();
       this.renderTable();
-      $("#nameform").submit(() => {
+       $("#nameform").submit(() => {
         this.save();
-      });
+       });
   
     }
-  
+
     renderPatientPageData() {
       var tableData = $(".tableData");
       tableData.empty();
