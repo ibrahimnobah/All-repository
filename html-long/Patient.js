@@ -7,7 +7,7 @@ class Patient {
     this.DOB = this.getdate(data.DOB);
     this.gender = this.valueOfGender(data.gender);
     this.email = data.email;
-    this.lastCheck =this.getdate(data.lastCheck);
+    this.lastCheck = this.getdate(data.lastCheck);
     this.CreatedBy = data.CreatedBy;
     this.Active = data.Active;
     this.creationDate = data.creationDate;
@@ -31,12 +31,12 @@ class Patient {
         return "Deleted";
     }
   }
-getdate(date){
-  var d = new Date(date);
-  var curr_date = d.getDate();
-  var curr_month = d.getMonth() + 1; 
-  var curr_year = d.getFullYear();
-  return  curr_year + "-" + curr_month + "-" +curr_date;
+  getdate(date) {
+    var d = new Date(date);
+    var dd = d.getDate();
+    var mm = d.getMonth() + 1;
+    var yy = d.getFullYear();
+    return yy + "-" + (mm > 9 ? '' : '0') + mm + "-" + (dd > 9 ? '' : '0') + dd;
 
- }   
+  }
 }
