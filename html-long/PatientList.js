@@ -8,21 +8,10 @@ class PatientList {
     inti() {
       this.renderPatientPageData();
       this.renderTable();
-      $("#cancle ", "addbutton").click(this.emptyForm);
       $("#nameform").submit(() => {
         this.save();
       });
   
-    }
-    emptyForm() {
-      $('#nameform').attr('data-id', "empty");
-      document.getElementsByClassName("firstName")[0].value = "";
-      document.getElementsByClassName("middleName")[0].value = "";
-      document.getElementsByClassName("lastName")[0].value = "";
-      document.getElementsByClassName("email")[0].value = "";
-      document.getElementsByClassName("DOB")[0].value = "";
-      document.getElementsByClassName("lastCheck")[0].value = "";
-      document.getElementById("Status").value = "";
     }
   
     renderPatientPageData() {
