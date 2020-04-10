@@ -2,6 +2,7 @@
 class PatientEdit {
     init() {
       $(".edit ").click(this.edit);
+      $("#cancle ", "addbutton").click(this.emptyForm);
     }
     edit() {
       var id = $(this).data("id");
@@ -18,5 +19,16 @@ class PatientEdit {
       document.getElementsByClassName("lastCheck")[0].value = patient.lastCheck;
     }
   
+
+    emptyForm() {
+      $('#nameform').attr('data-id', "empty");
+      document.getElementsByClassName("firstName")[0].value = "";
+      document.getElementsByClassName("middleName")[0].value = "";
+      document.getElementsByClassName("lastName")[0].value = "";
+      document.getElementsByClassName("email")[0].value = "";
+      document.getElementsByClassName("DOB")[0].value = "";
+      document.getElementsByClassName("lastCheck")[0].value = "";
+      document.getElementById("Status").value = "";
+    }
   }
   
