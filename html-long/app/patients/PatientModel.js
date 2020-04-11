@@ -1,4 +1,4 @@
-class Patient {
+class PatientModel {
   constructor(data) {
     this.ID = data.ID;
     this.fname = data.fname;
