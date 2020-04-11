@@ -31,7 +31,7 @@ class PatientEdit {
       if (patient.ID == "-1") {
         var tmp = patientsData.pop();
         patientsData.push(tmp);
-        id = tmp.ID + 1;
+        patient.ID = tmp.ID + 1;
       }
       render.renderTemplate(patient, templateText);
     }

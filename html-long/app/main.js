@@ -8,10 +8,6 @@ $(document).ready(function () {
   router.init();
   patientEdit.init();
   render.init();
+ 
 });
-
-
-
-
-
 
