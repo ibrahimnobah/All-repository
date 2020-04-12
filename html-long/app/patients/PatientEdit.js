@@ -1,20 +1,20 @@
 
 class PatientEdit {
     init() {
-      $(".edit ").click(this.edit);
+      var current=this;
+      $(".edit ").click(function(){
+        current.edit(this)
+      });
       $(".emptyForm").click(this.emptyForm);
       $("#nameform").submit(() => {
         this.save();
        });
     }
-    edit() {
-      var id = $(this).data("id");
-      var patient = new PatientModel(patientsData.find(p => p.ID === id))
-      $('#nameform').attr('data-id', patient.ID);
-      patientEdit.setDataToUI(patient);
+    edit(current) {
+      var id = $(current).data("id");
+      this.setDataToUI(id);
     }
-  
-   emptyForm() {
+    emptyForm() {
       $('#nameform').attr('data-id', "-1");
       document.getElementsByClassName("firstName")[0].value = "";
       document.getElementsByClassName("middleName")[0].value = "";
@@ -24,7 +24,6 @@ class PatientEdit {
       document.getElementsByClassName("lastCheck")[0].value = "";
       document.getElementById("Status").value = "";
     }
-
     save() {
        var patient=this.getDataFromUI();
        var templateText = document.getElementById("patient-template").innerHTML;
@@ -35,8 +34,9 @@ class PatientEdit {
       }
       render.renderTemplate(patient, templateText);
     }
-
-    setDataToUI(patient){
+    setDataToUI(id){
+      var patient = new PatientModel(patientsData.find(p => p.ID === id));
+      $('#nameform').attr('data-id', patient.ID);
       document.getElementById("activeCheck").checked = true;
       document.getElementsByClassName("firstName")[0].value = patient.fname;
       document.getElementsByClassName("middleName")[0].value = patient.mname;
@@ -80,8 +80,7 @@ class PatientEdit {
       var newpatient = new PatientModel(newone);
       return newpatient;
     }
-  
-  
+ 
   }
 
   
