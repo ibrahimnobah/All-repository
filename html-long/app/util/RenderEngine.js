@@ -1,9 +1,8 @@
 class RendererEngine{
     init(){
- 
     }
     renderTemplate(obj,templateText)
-    { 
+    {   
         var table = $(".table");
         var arr=[];
         var myString = templateText;
@@ -15,6 +14,6 @@ class RendererEngine{
           myString=myString.replace('{{'+Element+'}}',obj[Element]);
         });
         table.append(myString);
-
-}
-}
+    }
+    }
+this.render = new RendererEngine();

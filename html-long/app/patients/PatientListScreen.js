@@ -1,5 +1,5 @@
-class PatientList {
 
+class PatientList {
     inti() {
        this.renderTable();
     }
@@ -14,3 +14,4 @@ class PatientList {
   
     }
   }
+this.patientListScr = new PatientList();

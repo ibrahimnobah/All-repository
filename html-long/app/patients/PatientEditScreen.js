@@ -1,4 +1,3 @@
-
 class PatientEdit {
     init() {
       var current=this;
@@ -80,7 +79,6 @@ class PatientEdit {
       var newpatient = new PatientModel(newone);
       return newpatient;
     }
- 
   }
-
+this.patientEditScr = new PatientEdit();
   

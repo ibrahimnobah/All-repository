@@ -1,13 +1,8 @@
 
-  this.router = new RouterEngine();
-  this.patientList = new PatientList();
-  this.patientEdit = new PatientEdit();
-  this.render = new RendererEngine();
 $(document).ready(function () {
-  patientList.inti();
+  patientListScr.inti();
   router.init();
-  patientEdit.init();
+  patientEditScr.init();
   render.init();
- 
 });
 
